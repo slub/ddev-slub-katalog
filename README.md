@@ -27,3 +27,7 @@ Or call https://ddev-slub-katalog.ddev.site/typo3.
 
 Username is admin
 Password is adminslub
+
+### Catalog-Frontend
+
+https://katalog.ddev.site/
