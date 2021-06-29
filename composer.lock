@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de246f43a23e55558ea8c1d61995b32b",
+    "content-hash": "216c384d363d4087cc53361720fdec15",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -1504,6 +1504,59 @@
                 "TYPO3 CMS"
             ],
             "time": "2021-06-22T09:11:21+00:00"
+        },
+        {
+            "name": "slub/slub-events",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slub/slub_events.git",
+                "reference": "2095d997e7a1a14e30e862c9d25d4489aa230e09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slub/slub_events/zipball/2095d997e7a1a14e30e862c9d25d4489aa230e09",
+                "reference": "2095d997e7a1a14e30e862c9d25d4489aa230e09",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "~9.5.24|~10.4.12"
+            },
+            "default-branch": true,
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "slub_events"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Slub\\SlubEvents\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Bigga",
+                    "email": "typo3@slub-dresden.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "TYPO3 extension for event registration and experts booking.",
+            "homepage": "https://github.com/slub/slub_events",
+            "keywords": [
+                "extension",
+                "slub_events",
+                "typo3"
+            ],
+            "support": {
+                "issues": "https://github.com/slub/slub_events/issues",
+                "source": "https://github.com/slub/slub_events/tree/master"
+            },
+            "time": "2021-06-29T08:07:34+00:00"
         },
         {
             "name": "slub/slub-find-bookmarks",
@@ -5582,14 +5635,15 @@
         "slub/slub-katalog-config": 20,
         "slub/slub-katalog-beta": 20,
         "slub/slub-template": 20,
-        "slub/slub-account": 20
+        "slub/slub-account": 20,
+        "slub/slub-events": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
     "platform-overrides": {
-        "php": "7.2"
+        "php": "7.3"
     },
     "plugin-api-version": "2.1.0"
 }
