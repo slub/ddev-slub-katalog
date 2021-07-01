@@ -51,6 +51,7 @@ return [
         ],
     ],
     'FE' => [
+        'cookieDomain' => 'ddev.site',
         'debug' => false,
         'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
