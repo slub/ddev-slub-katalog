@@ -1,0 +1,140 @@
+{
+  "count": 15,
+  "show": 10,
+  "enableFlag": "enabled",
+  "history": [
+    {
+      "entry_number": 1,
+      "issue_date": "2019-03-13T11:19:46Z",
+      "cancelled": 0,
+      "barcode": "31890071",
+      "rsn": "14062027",
+      "medientyp": "B",
+      "author": [
+        "Nolte, Ernst"
+      ],
+      "title": "Geschichte Europas 1848 - 1918"
+    },
+    {
+      "entry_number": 2,
+      "issue_date": "2019-03-16T08:54:56Z",
+      "cancelled": 0,
+      "barcode": "34484757",
+      "rsn": "16591439",
+      "medientyp": "B",
+      "author": [
+        "Martin, Ernst",
+        "Wawrinowski, Uwe"
+      ],
+      "title": "Beobachtungslehre"
+    },
+    {
+      "entry_number": 3,
+      "issue_date": "2019-04-04T12:04:37Z",
+      "cancelled": 1,
+      "barcode": "34645218",
+      "rsn": "16570849",
+      "medientyp": "B",
+      "author": [
+        "Wolf, Daniel ¬[VerfasserIn]¬"
+      ],
+      "title": "¬Das¬ Salz der Erde"
+    },
+    {
+      "entry_number": 4,
+      "issue_date": "2019-04-05T12:30:30Z",
+      "cancelled": 0,
+      "barcode": "33109616",
+      "rsn": "16394491",
+      "medientyp": "B",
+      "author": [
+        "Lankes, R. David ¬[VerfasserIn]¬",
+        "Hobohm, Hans-Christoph ¬[HerausgeberIn; VerfasserIn eines Vorworts]¬",
+        "Lapp, Erdmute ¬[ÜbersetzerIn]¬",
+        "Bredemeier, Willi ¬[ÜbersetzerIn]¬"
+      ],
+      "title": "Erwarten Sie mehr!"
+    },
+    {
+      "entry_number": 5,
+      "issue_date": "2019-05-01T06:30:52Z",
+      "cancelled": 0,
+      "barcode": "33109615",
+      "rsn": "16394491",
+      "medientyp": "B",
+      "author": [
+        "Lankes, R. David ¬[VerfasserIn]¬",
+        "Hobohm, Hans-Christoph ¬[HerausgeberIn; VerfasserIn eines Vorworts]¬",
+        "Lapp, Erdmute ¬[ÜbersetzerIn]¬",
+        "Bredemeier, Willi ¬[ÜbersetzerIn]¬"
+      ],
+      "title": "Erwarten Sie mehr!"
+    },
+    {
+      "entry_number": 6,
+      "issue_date": "2019-05-14T13:23:32Z",
+      "cancelled": 1,
+      "barcode": "33109615",
+      "rsn": "16394491",
+      "medientyp": "B",
+      "author": [
+        "Lankes, R. David ¬[VerfasserIn]¬",
+        "Hobohm, Hans-Christoph ¬[HerausgeberIn; VerfasserIn eines Vorworts]¬",
+        "Lapp, Erdmute ¬[ÜbersetzerIn]¬",
+        "Bredemeier, Willi ¬[ÜbersetzerIn]¬"
+      ],
+      "title": "Erwarten Sie mehr!"
+    },
+    {
+      "entry_number": 7,
+      "issue_date": "2019-12-02T08:55:40Z",
+      "cancelled": 1,
+      "barcode": "20245033",
+      "rsn": "1003774",
+      "medientyp": "B",
+      "author": [
+        "Kneiding, Anja ¬[Hrsg.]¬",
+        "Düvel, Martina"
+      ],
+      "title": "Botanische Gärten"
+    },
+    {
+      "entry_number": 8,
+      "issue_date": "2019-12-02T08:48:10Z",
+      "cancelled": 0,
+      "barcode": "20245033",
+      "rsn": "1003774",
+      "medientyp": "B",
+      "author": [
+        "Kneiding, Anja ¬[Hrsg.]¬",
+        "Düvel, Martina"
+      ],
+      "title": "Botanische Gärten"
+    },
+    {
+      "entry_number": 9,
+      "issue_date": "2020-07-21T09:26:03Z",
+      "cancelled": 0,
+      "barcode": "34577987",
+      "rsn": "16314175",
+      "medientyp": "B",
+      "author": [
+        "Anouk, Misha"
+      ],
+      "title": "Goodbye, Jehova!"
+    },
+    {
+      "entry_number": 10,
+      "issue_date": "2021-03-18T12:18:15Z",
+      "cancelled": 0,
+      "barcode": "20194805",
+      "rsn": "56611",
+      "medientyp": "B",
+      "author": [
+        "Waldmann, Günter",
+        "Bothe, Katrin"
+      ],
+      "title": "Erzählen"
+    }
+  ]
+}

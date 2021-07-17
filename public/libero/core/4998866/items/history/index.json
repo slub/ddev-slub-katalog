@@ -1,0 +1,126 @@
+{
+  "count": 89,
+  "show": 10,
+  "enableFlag": "disabled",
+  "history": [
+    {
+      "entry_number": 1,
+      "issue_date": "2019-01-03T13:51:41Z",
+      "return_date": "2019-01-14T08:08:38Z",
+      "barcode": "34101386",
+      "rsn": "16053478",
+      "medientyp": "B",
+      "author": [
+        "Nitzschke, Katrin",
+        "Loesch, Perk"
+      ],
+      "title": "¬Die¬ Prager Straße in Dresden"
+    },
+    {
+      "entry_number": 2,
+      "issue_date": "2019-01-18T09:18:20Z",
+      "return_date": "2019-01-18T09:18:25Z",
+      "barcode": "11993874N",
+      "rsn": "16632625",
+      "medientyp": "FL",
+      "author": [
+        "Cherubini,Sabrina"
+      ],
+      "title": "Langenscheidt Deutsch auf dem Amt"
+    },
+    {
+      "entry_number": 3,
+      "issue_date": "2019-01-28T08:43:31Z",
+      "return_date": "2019-02-05T10:24:29Z",
+      "barcode": "S075",
+      "rsn": "16158146",
+      "medientyp": "S",
+      "author": [],
+      "title": "Buchbox Zentralbibliothek"
+    },
+    {
+      "entry_number": 4,
+      "issue_date": "2019-02-04T13:56:42Z",
+      "barcode": "30330619",
+      "rsn": "114191",
+      "medientyp": "B",
+      "author": [
+        "Billig, Gerhard"
+      ],
+      "title": "¬Die¬ Burgwardorganisation im obersächsisch-meißnischen Raum"
+    },
+    {
+      "entry_number": 5,
+      "issue_date": "2019-02-12T12:41:10Z",
+      "return_date": "2019-02-12T12:41:17Z",
+      "barcode": "11996161N",
+      "rsn": "16640597",
+      "medientyp": "FL",
+      "author": [
+        "Bilder von János Kalmár. Texte von Michael Kühler"
+      ],
+      "title": "Faszinierendes Wien"
+    },
+    {
+      "entry_number": 6,
+      "issue_date": "2019-02-14T13:24:31Z",
+      "return_date": "2019-02-14T13:24:40Z",
+      "barcode": "11996455N",
+      "rsn": "16641240",
+      "medientyp": "FL",
+      "author": [
+        "Sivananda Yoga Vedanta Zentrum"
+      ],
+      "title": "Gesund und entspannt mit Ayurveda"
+    },
+    {
+      "entry_number": 7,
+      "issue_date": "2019-03-25T08:23:04Z",
+      "return_date": "2019-04-02T08:04:57Z",
+      "barcode": "34771357",
+      "rsn": "16589059",
+      "medientyp": "B",
+      "author": [
+        "Zeh, Juli ¬[VerfasserIn]¬"
+      ],
+      "title": "Neujahr"
+    },
+    {
+      "entry_number": 8,
+      "issue_date": "2019-03-25T07:25:36Z",
+      "return_date": "2019-04-23T07:35:25Z",
+      "barcode": "34484757",
+      "rsn": "16591439",
+      "medientyp": "B",
+      "author": [
+        "Martin, Ernst",
+        "Wawrinowski, Uwe"
+      ],
+      "title": "Beobachtungslehre"
+    },
+    {
+      "entry_number": 9,
+      "issue_date": "2019-03-25T07:21:43Z",
+      "return_date": "2019-04-23T07:35:09Z",
+      "barcode": "31483516",
+      "rsn": "13844425",
+      "medientyp": "B",
+      "author": [
+        "Toprak, Ahmet"
+      ],
+      "title": "¬Das¬ schwache Geschlecht - die türkischen Männer"
+    },
+    {
+      "entry_number": 10,
+      "issue_date": "2019-03-25T07:20:30Z",
+      "return_date": "2019-03-25T07:20:46Z",
+      "barcode": "31483516",
+      "rsn": "13844425",
+      "medientyp": "B",
+      "author": [
+        "Toprak, Ahmet"
+      ],
+      "title": "¬Das¬ schwache Geschlecht - die türkischen Männer"
+    }
+  ]
+}

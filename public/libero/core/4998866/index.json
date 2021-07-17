@@ -1,0 +1,58 @@
+{
+  "benid": "123456",
+  "name": "Max Mustermann",
+  "email": "max.Mustermann@slub-dresden.de",
+  "address": "Testweg 01, 01234 Testburg, Deutschland",
+  "expires": "2022-01-12T23:00:00Z",
+  "status": "N",
+  "X_status_desc": "Normal",
+  "X_name": {
+    "givenname": "Max",
+    "surname": "Mustermann"
+  },
+  "X_post_address": {
+    "street_1": "Testweg 01",
+    "plz": "01234",
+    "ort": "Testburg",
+    "country": "Deutschland"
+  },
+  "X_residental_address": {},
+  "X_alternative_address": {},
+  "X_date_of_joining": "2010-09-19T22:00:00Z",
+  "X_date_of_last_issue_int": "65919",
+  "X_date_of_last_issue_ext": "2021-06-24",
+  "X_gender": "M",
+  "X_branch": "zell1",
+  "X_branch_desc": "Zentralbibliothek",
+  "X_category": "TE",
+  "X_category_desc": "Mitarbeiter TU",
+  "X_blacklists": [],
+  "X_notes": [],
+  "X_webopac_notes": [
+    {
+      "nr": "1",
+      "date": "",
+      "time": "",
+      "note": "Monatskarte gefunden, liegt im Zentralbibliothek"
+    },
+    {
+      "nr": "2",
+      "date": "",
+      "time": "",
+      "note": " SLUBcard liegt an Servicetheke Drepunct"
+    },
+    {
+      "nr": "3",
+      "date": "",
+      "time": "",
+      "note": "heute soll es noch Regen geben"
+    },
+    {
+      "nr": "4",
+      "date": "",
+      "time": "",
+      "note": "Anruf von Oma, Hausschlüssel vergessen"
+    }
+  ],
+  "type": "TE"
+}
