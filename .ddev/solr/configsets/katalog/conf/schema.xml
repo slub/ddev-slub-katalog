@@ -1,0 +1,418 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * finc-solr biblio schema
+ *
+ * Copyright (C) Leipzig University Library <info@ub.uni-leipzig.de>
+ *
+ * @author   Finc Team <team@finc.info>
+ * @license  http://opensource.org/licenses/gpl-2.0.php GNU GPLv2
+ *  
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2,
+ * as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ */ 
+-->
+<schema name="VuFind Bibliographic Index" version="1.6">
+  <types>
+    <!-- Define fieldType long as it is needed by the _version_ field required by Solr 4.x -->
+    <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+    <fieldType name="string" class="solr.StrField" sortMissingLast="true" omitNorms="true"/>
+    <fieldType name="textFacet" class="solr.TextField" sortMissingLast="true" omitNorms="true">
+      <analyzer>
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <!-- strip trailing punctuation from facets: -->
+        <filter class="solr.PatternReplaceFilterFactory" pattern="(?&lt;!\b[A-Z])[.\s]*$" replacement="" replace="first"/>
+      </analyzer>
+    </fieldType>
+    <fieldType name="text" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0" splitOnCaseChange="1"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>
+        <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+        <filter class="solr.SnowballPorterFilterFactory" language="German2"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
+        <filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0" splitOnCaseChange="1"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>
+        <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+        <filter class="solr.SnowballPorterFilterFactory" language="German2"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+      </analyzer>
+    </fieldType>
+    <!-- Text Field without Stemming and Synonyms -->
+    <fieldType name="textProper" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+      </analyzer>
+    </fieldType>
+    <!-- Basic Text Field for use with Spell Correction -->
+    <fieldType name="textSpell" class="solr.TextField" positionIncrementGap="100">
+      <analyzer>
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="0" catenateNumbers="0" catenateAll="0"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stoppwoerter_de-en-kurz.txt"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+      </analyzer>
+    </fieldType>
+    <!-- More advanced spell checking field. -->
+    <fieldType name="textSpellShingle" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stoppwoerter_de-en-kurz.txt"/>
+        <filter class="solr.ShingleFilterFactory" maxShingleSize="2" outputUnigrams="false"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stoppwoerter_de-en-kurz.txt"/>
+        <filter class="solr.ShingleFilterFactory" maxShingleSize="2" outputUnigrams="false"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+      </analyzer>
+    </fieldType>
+    <fieldType name="textSort" class="solr.TextField" sortMissingLast="false" omitNorms="true">
+      <analyzer>
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory" />
+        <filter class="solr.TrimFilterFactory" />
+        <filter class="solr.PatternReplaceFilterFactory" 
+pattern="^(a|an|as|az|das|de|degl|degli|dei|del|de l|de la|dell|della|delle|dello|dem|den|der|des|die|du|een|egy|ein|eine|einem|einen|einer|eines|el|gli|het|i|il|l|la|las|le|les|lo|los|'n|o|os|'t|the|um|uma|umas|un|un|una|unas|une|uno|unos|uns)[^\w]+" 
+replacement="" 
+replace="all" 
+        />
+      </analyzer>
+    </fieldType>
+    <fieldType name="textFull" class="solr.TextField" positionIncrementGap="100">
+      <analyzer>
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0" splitOnCaseChange="1"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stoppwoerter_de-en-kurz.txt"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>
+        <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
+        <filter class="solr.SnowballPorterFilterFactory" language="German2"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+      </analyzer>
+    </fieldType>
+    <fieldType name="textFullProper" class="solr.TextField" positionIncrementGap="100">
+      <analyzer>
+        <tokenizer class="solr.ICUTokenizerFactory"/>
+        <filter class="solr.WordDelimiterFilterFactory" generateWordParts="1" generateNumberParts="1" catenateWords="1" catenateNumbers="1" catenateAll="0"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>
+        <filter class="solr.StopFilterFactory" ignoreCase="true" words="stopwords.txt"/>
+        <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+      </analyzer>
+    </fieldType>
+    <!-- Text Field for Normalized ISBN/ISSN Numbers - take first chunk of text
+         prior to whitespace, force to lowercase, strip non-ISBN/ISSN characters,
+         omit results that are empty after stripping. -->
+    <fieldType name="isn" class="solr.TextField" positionIncrementGap="100">
+      <analyzer>
+        <tokenizer class="solr.PatternTokenizerFactory" pattern="^(\S*)\s*.*$" group="1"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+        <filter class="solr.PatternReplaceFilterFactory" pattern="[^0-9x]" replacement="" replace="all"/>
+        <filter class="solr.LengthFilterFactory" min="1" max="100"/>
+      </analyzer>
+    </fieldType>
+    <!-- Text Field for rather normalized information like call number (Signatur),
+         barcode, rvk, udk and misc-fields. Tokenize on whitespace and lowercase everything.
+         Leave any special characters unchanged. 2016: replace with callnumberSearch ? -->
+    <fieldType name="code" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+    </fieldType>
+    <fieldType name="codetokenized" class="solr.TextField" positionIncrementGap="100">
+      <analyzer type="index">
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+      <analyzer type="query">
+        <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+        <filter class="solr.LowerCaseFilterFactory"/>
+      </analyzer>
+    </fieldType>
+    <!-- case-insensitive/whitespace-agnostic field type for callnumber searching -->
+    <fieldType name="callnumberSearch" class="solr.TextField" sortMissingLast="true" omitNorms="true">
+      <analyzer>
+        <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="(\s)" replacement=""/>
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+        <filter class="solr.ICUFoldingFilterFactory"/>
+      </analyzer>
+    </fieldType>
+    <fieldType name="date" class="solr.TrieDateField" sortMissingLast="true" omitNorms="true" precisionStep="6"/>
+    <fieldType name="random" class="solr.RandomSortField" indexed="true"/>
+    <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" omitNorms="true"/>
+    <!-- add geo field to handle geographic search and display capabilities -->
+    <fieldType name="geo" class="solr.SpatialRecursivePrefixTreeFieldType" distErrPct="0.025" maxDistErr="0.000009" distanceUnits="degrees"/>
+  </types>
+  <fields>
+    <!-- Required by Solr 4.x -->
+    <field name="_version_" type="long" indexed="true" stored="true"/>
+    <!-- Core Fields  -->
+    <field name="id" type="string" indexed="true" stored="true"/>
+    <field name="fullrecord" type="string" indexed="false" stored="true"/>
+    <field name="marc_error" type="string" indexed="false" stored="true" multiValued="true"/>
+    <field name="allfields" type="text" indexed="true" stored="false" multiValued="true"/>
+    <field name="allfields_unstemmed" type="textProper" indexed="true" stored="false" multiValued="true"/>
+    <field name="fulltext" type="textFull" indexed="true" stored="false"/>
+    <field name="fulltext_unstemmed" type="textFullProper" indexed="true" stored="false"/>
+    <field name="spelling" type="textSpell" indexed="true" stored="true" multiValued="true"/>
+    <field name="spellingShingle" type="textSpellShingle" indexed="true" stored="true" multiValued="true"/>
+    <!-- Institutional Fields -->
+    <!-- institution is an optional field (in finc context), it only has values, if institutions want to have in their catalogue -->
+    <field name="institution" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="collection" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="building" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <!-- Generic Fields -->
+    <field name="language" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <!-- format is an optional field (in finc context), it only has values, if the applied algorithm for format determination delivers some values -->
+    <field name="format" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="author" type="textProper" indexed="true" stored="true" multiValued="true" termVectors="true"/>
+    <!-- author_variant is a VuFind standard Solr schema field, but is not utilized in finc context -->
+    <field name="author_variant" type="text" indexed="true" stored="true" multiValued="true" termVectors="true"/>
+    <field name="author_role" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <!-- author_facet is a field that will be filled by copyfields only (actually from author, author2, author_corporate and author_corporate2), i.e., separate mappings are not really necessary -->
+    <field name="author_facet" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <field name="author_sort" type="string" indexed="true" stored="true" docValues="true"/>
+    <field name="title" type="text" indexed="true" stored="true"/>
+    <field name="title_sort" type="textSort" indexed="true" stored="true"/>
+    <field name="title_sub" type="text" indexed="true" stored="true"/>
+    <field name="title_short" type="text" indexed="true" stored="true"/>
+    <field name="title_full" type="text" indexed="true" stored="true"/>
+    <field name="title_full_unstemmed" type="textProper" indexed="true" stored="true"/>
+    <field name="title_fullStr" type="string" indexed="true" stored="true" docValues="true"/>
+    <field name="title_auth" type="text" indexed="true" stored="true"/>
+    <field name="physical" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="publisher" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <field name="publisherStr" type="string" indexed="true" stored="false" multiValued="true" docValues="true"/>
+    <field name="publishDate" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="publishDateSort" type="string" indexed="true" stored="true" docValues="true"/>
+    <field name="edition" type="string" indexed="true" stored="true" docValues="true"/>
+    <field name="description" type="text" indexed="true" stored="true"/>
+    <field name="contents" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="url" type="string" indexed="false" stored="true" multiValued="true"/>
+    <field name="thumbnail" type="string" indexed="false" stored="true"/>
+    <!-- Catalog Specific Fields -->
+    <field name="lccn" type="string" indexed="true" stored="true" docValues="true"/>
+    <field name="ctrlnum" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="isbn" type="isn" indexed="true" stored="true" multiValued="true"/>
+    <field name="issn" type="isn" indexed="true" stored="true" multiValued="true"/>
+    <field name="oclc_num" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="callnumber-first" type="string" indexed="true" stored="true" docValues="true"/>
+    <field name="callnumber-subject" type="string" indexed="true" stored="true" docValues="true"/>
+    <field name="callnumber-label" type="string" indexed="true" stored="true" docValues="true"/>
+    <field name="callnumber-sort" type="string" indexed="true" stored="true" docValues="true"/>
+    <field name="callnumber-raw" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="callnumber-search" type="callnumberSearch" indexed="true" stored="true" multiValued="true"/>
+    <field name="dewey-hundreds" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="dewey-tens" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="dewey-ones" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="dewey-full" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="dewey-sort" type="string" indexed="true" stored="true" docValues="true"/>
+    <field name="dewey-raw" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="dewey-search" type="callnumberSearch" indexed="true" stored="true" multiValued="true"/>
+    <field name="author2" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <!-- author2_variant is a VuFind standard Solr schema field, but is not utilized in finc context -->
+    <field name="author2_variant" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="author2_role" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="author_corporate" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <field name="author_corporate_role" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <!-- author_fuller is a VuFind standard Solr schema field, but is not utilized in finc context -->
+    <field name="author_fuller" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <!-- author2_fuller is a VuFind standard Solr schema field, but is not utilized in finc context -->
+    <field name="author2_fuller" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <field name="author_additional" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <field name="title_alt" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="title_old" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="title_new" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="dateSpan" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="series" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="series2" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="topic" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="topic_unstemmed" type="textProper" indexed="true" stored="false" multiValued="true"/>
+    <field name="topic_facet" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <field name="topic_browse" type="string" indexed="true" stored="false" multiValued="true" docValues="true"/>
+    <!-- author_browse is a field that will be filled by copyfields only (actually from author, author2, and author_corporate), i.e., separate mappings are not really necessary -->
+    <field name="author_browse" type="string" indexed="true" stored="false" multiValued="true" docValues="true"/>
+    <field name="genre" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="genre_facet" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <field name="geographic" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="geographic_facet" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <field name="era" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="era_facet" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <field name="illustrated" type="string" indexed="true" stored="true" multiValued="false" docValues="true"/>
+    <!-- Used for geographic search and display fields -->
+    <field name="long_lat" type="geo" indexed="true" stored="true" multiValued="true"/>
+    <field name="long_lat_display" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="long_lat_label" type="string" indexed="false" stored="true" multiValued="true" docValues="true"/>
+    <!-- Container fields (i.e. for describing journal containing an article) -->
+    <field name="container_title" type="text" indexed="true" stored="true"/>
+    <field name="container_volume" type="text" indexed="true" stored="true"/>
+    <field name="container_issue" type="text" indexed="true" stored="true"/>
+    <field name="container_start_page" type="text" indexed="true" stored="true"/>
+    <field name="container_reference" type="text" indexed="true" stored="true"/>
+    <!-- Hierarchy Fields -->
+    <field name="hierarchytype" type="string" indexed="true" stored="true" multiValued="false" docValues="true"/>
+    <field name="hierarchy_top_id" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="hierarchy_top_title" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="hierarchy_parent_id" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="hierarchy_parent_title" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="hierarchy_sequence" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="is_hierarchy_id" type="string" indexed="true" stored="true" multiValued="false" docValues="true"/>
+    <field name="is_hierarchy_title" type="string" indexed="true" stored="true" multiValued="false" docValues="true"/>
+    <field name="title_in_hierarchy" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="hierarchy_browse" type="string" indexed="true" stored="false" multiValued="true" docValues="true"/>
+    <!-- recordtype is an optional field (in finc context), it only has a value, if the field 'fullrecord' contains the original record as value -->
+    <!-- Used for loading correct record driver -->
+    <field name="recordtype" type="string" indexed="false" stored="true" docValues="true"/>
+    <!-- Tracking fields to keep track of oldest and most recent index times -->
+    <field name="first_indexed" type="date" indexed="true" stored="true" docValues="true"/>
+    <field name="last_indexed" type="date" indexed="true" stored="true" docValues="true" default="NOW"/>
+    <!-- finc -->
+    <field name="access_facet" type="string" indexed="true" stored="true" multiValued="false" docValues="true"/>
+    <field name="author2_orig" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <field name="author_corporate2_orig" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <field name="author_corporate2_role" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="author_corporate2" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <field name="author_corporate_orig" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <field name="author_corporate_ref" type="textProper" indexed="true" stored="false" multiValued="true"/>
+    <field name="author_id" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="author_orig" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <field name="author_ref" type="textProper" indexed="true" stored="false" multiValued="true"/>
+    <field name="barcode" type="code" indexed="true" stored="true" multiValued="true"/>
+    <field name="dissertation_note" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="film_heading" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <field name="finc_class_facet" default="not assigned" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="footnote" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="geogr_code" default="not assigned" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <field name="geogr_code_person" default="not assigned" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <field name="imprint" type="string" indexed="false" stored="true" multiValued="false" docValues="true"/>
+    <field name="ismn" type="isn" indexed="true" stored="true" multiValued="true"/>
+    <field name="itemdata" type="string" indexed="false" stored="true" docValues="true"/>
+    <field name="mega_collection" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="misc_dech1" type="codetokenized" indexed="true" stored="false" multiValued="true"/>
+    <field name="multipart_link" type="string" indexed="true" stored="true" multiValued="true" termVectors="true" docValues="true"/>
+    <field name="multipart_part" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="multipart_set" type="string" indexed="true" stored="true" multiValued="false" docValues="true"/>
+    <field name="music_heading_browse" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="music_heading" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="performer_note" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="publishPlace" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <field name="purchase" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="record_id" type="string" indexed="true" stored="true" multiValued="false" termVectors="true" docValues="true"/>
+    <field name="rsn" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="rvk_facet" type="code" indexed="true" stored="true" termVectors="true" multiValued="true"/>
+    <field name="rvk_label" type="text" indexed="true" stored="true" multiValued="true"/>
+    <field name="rvk_path" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <field name="series_orig" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <field name="signatur" type="code" indexed="true" stored="true" multiValued="true"/>
+    <field name="source_id" default="error" type="string" indexed="true" stored="true" multiValued="false" docValues="true"/>
+    <field name="timecode" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <field name="title_orig" type="textProper" indexed="true" stored="true" multiValued="false"/>
+    <field name="title_uniform" type="text" indexed="true" stored="true" multiValued="false"/>
+    <field name="topic_id" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="topic_ref" type="text" indexed="true" stored="false" multiValued="true"/>
+    <field name="urn" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <field name="zdb" type="string" indexed="true" stored="true" multiValued="false" docValues="true"/>
+    <!-- Dynamic fields for customization without schema modification -->
+    <dynamicField name="callnumber_*" type="code" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="barcode_*" type="code" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="misc_*" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="branch_*" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="collcode_*" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="format_*" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="facet_*" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="local_heading_facet_*" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="local_heading_*" type="text" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="local_class_*" type="code" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="udk_raw_*" type="code" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="udk_facet_*" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <dynamicField name="*_cns" type="callnumberSearch" indexed="true" stored="true"/>
+    <dynamicField name="*_cns_mv" type="callnumberSearch" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="*_ct" type="codetokenized" indexed="true" stored="true"/>
+    <dynamicField name="*_ct_mv" type="codetokenized" indexed="true" stored="true" multiValued="true"/>
+    <!-- Dynamic fields for customization without schema modification -->
+    <dynamicField name="*_date" type="date" indexed="true" stored="true" docValues="true"/>
+    <dynamicField name="*_date_mv" type="date" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <dynamicField name="*_isn" type="isn" indexed="true" stored="true"/>
+    <dynamicField name="*_isn_mv" type="isn" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="*_str" type="string" indexed="true" stored="true" docValues="true"/>
+    <dynamicField name="*_str_mv" type="string" indexed="true" stored="true" multiValued="true" docValues="true"/>
+    <dynamicField name="*_txt" type="text" indexed="true" stored="true"/>
+    <dynamicField name="*_txt_mv" type="text" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="*_txtF" type="textFacet" indexed="true" stored="true"/>
+    <dynamicField name="*_txtF_mv" type="textFacet" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="*_txtP" type="textProper" indexed="true" stored="true"/>
+    <dynamicField name="*_txtP_mv" type="textProper" indexed="true" stored="true" multiValued="true"/>
+    <dynamicField name="*_random" type="random"/>
+    <dynamicField name="*_boolean" type="boolean" indexed="true" stored="true"/>
+    <dynamicField name="*_geo" type="geo" indexed="true" stored="true" multiValued="false"/>
+    <dynamicField name="*_geo_mv" type="geo" indexed="true" stored="true" multiValued="true"/>
+  </fields>
+  <uniqueKey>id</uniqueKey>
+  <!-- CopyFields for Spelling -->
+  <!-- ** Basic, single word spelling -->
+  <copyField source="allfields" dest="spelling"/>
+  <!-- ** Complex, Shingle spelling -->
+  <copyField source="author" dest="spellingShingle"/>
+  <copyField source="title" dest="spellingShingle"/>
+  <copyField source="contents" dest="spellingShingle"/>
+  <copyField source="series" dest="spellingShingle"/>
+  <copyField source="topic" dest="spellingShingle"/>
+  <!-- CopyFields for Faceting on Text -->
+  <copyField source="title_full" dest="title_fullStr"/>
+  <copyField source="title_full" dest="title_full_unstemmed"/>
+  <copyField source="author" dest="author_facet"/>
+  <copyField source="author2" dest="author_facet"/>
+  <copyField source="author_corporate" dest="author_facet"/>
+  <copyField source="author_corporate2" dest="author_facet"/>
+  <copyField source="publisher" dest="publisherStr"/>
+  <copyField source="topic" dest="topic_unstemmed"/>
+  <copyField source="allfields" dest="allfields_unstemmed"/>
+  <copyField source="fulltext" dest="fulltext_unstemmed"/>
+  <!-- CopyFields for Alphabetic Browse -->
+  <copyField source="topic" dest="topic_browse"/>
+  <copyField source="music_heading" dest="music_heading_browse"/>
+  <copyField source="author" dest="author_browse"/>
+  <copyField source="author2" dest="author_browse"/>
+  <copyField source="author_corporate" dest="author_browse"/>
+  <!-- CopyFields for All Fields -->
+  <copyField source="facet_*" dest="allfields"/>
+  <copyField source="facet_*" dest="allfields_unstemmed"/>
+  <copyField source="format" dest="allfields"/>
+  <copyField source="format" dest="allfields_unstemmed"/>
+  <!-- CopyFields for call numbers -->
+  <copyField source="dewey-raw" dest="dewey-search"/>
+  <copyField source="callnumber-raw" dest="callnumber-search"/>
+</schema>
