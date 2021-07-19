@@ -1,0 +1,254 @@
+{
+  "count": 153,
+  "show": 10,
+  "system_messages": [
+    {
+      "message": 1,
+      "SysID": "64612,10827",
+      "BenID": "123456",
+      "msgdate": "2017-11-25T02:00:27Z",
+      "messageTyp": "Erinnerung",
+      "messageLine": "10233348 - Eliten, politische Kultur und Privatisierung in Ostdeutschland, Tschechien und Mittelosteuropa, 30028870 - Eliten im Wandel, 32393921 - Civil society, constitution, and legitimacy",
+      "messageID": "",
+      "messageURL": "",
+      "Barcode": [
+        "10233348",
+        "30028870",
+        "32393921"
+      ],
+      "Exemplar": [
+        "Eliten, politische Kultur und Privatisierung in Ostdeutschland, Tschechien und Mittelosteuropa",
+        "Eliten im Wandel",
+        "Civil society, constitution, and legitimacy"
+      ],
+      "Medien": [
+        {
+          "Titel": "Eliten, politische Kultur und Privatisierung in Ostdeutschland, Tschechien und Mittelosteuropa",
+          "Barcode": "10233348"
+        },
+        {
+          "Titel": "Eliten im Wandel",
+          "Barcode": "30028870"
+        },
+        {
+          "Titel": "Civil society, constitution, and legitimacy",
+          "Barcode": "32393921"
+        }
+      ],
+      "Notizen": "Freundliche Erinnerung versandt."
+    },
+    {
+      "message": 2,
+      "SysID": "64692,10814",
+      "BenID": "123456",
+      "msgdate": "2018-02-13T02:00:14Z",
+      "messageTyp": "Erinnerung",
+      "messageLine": "S213 - Buchbox Zentralbibliothek",
+      "messageID": "",
+      "messageURL": "",
+      "Barcode": [
+        "S213"
+      ],
+      "Exemplar": [
+        "Buchbox Zentralbibliothek"
+      ],
+      "Medien": [
+        {
+          "Titel": "Buchbox Zentralbibliothek",
+          "Barcode": "S213"
+        }
+      ],
+      "Notizen": "Freundliche Erinnerung versandt."
+    },
+    {
+      "message": 3,
+      "SysID": "64770,10813",
+      "BenID": "123456",
+      "msgdate": "2018-05-02T01:00:13Z",
+      "messageTyp": "Erinnerung",
+      "messageLine": "30217662 - Seltsame Frucht Kakao, 31063553 -  Buch der Stadt Dresden",
+      "messageID": "",
+      "messageURL": "",
+      "Barcode": [
+        "30217662",
+        "31063553"
+      ],
+      "Exemplar": [
+        "Seltsame Frucht Kakao",
+        " Buch der Stadt Dresden"
+      ],
+      "Medien": [
+        {
+          "Titel": "Seltsame Frucht Kakao",
+          "Barcode": "30217662"
+        },
+        {
+          "Titel": " Buch der Stadt Dresden",
+          "Barcode": "31063553"
+        }
+      ],
+      "Notizen": "Freundliche Erinnerung versandt."
+    },
+    {
+      "message": 4,
+      "SysID": "64782,10816",
+      "BenID": "123456",
+      "msgdate": "2018-05-14T01:00:16Z",
+      "messageTyp": "Erinnerung",
+      "messageLine": "30885648 - Taschenwörterbuch Englisch-Deutsch",
+      "messageID": "",
+      "messageURL": "",
+      "Barcode": [
+        "30885648"
+      ],
+      "Exemplar": [
+        "Taschenwörterbuch Englisch-Deutsch"
+      ],
+      "Medien": [
+        {
+          "Titel": "Taschenwörterbuch Englisch-Deutsch",
+          "Barcode": "30885648"
+        }
+      ],
+      "Notizen": "Freundliche Erinnerung versandt."
+    },
+    {
+      "message": 5,
+      "SysID": "64784,10811",
+      "BenID": "123456",
+      "msgdate": "2018-05-16T01:00:11Z",
+      "messageTyp": "Erinnerung",
+      "messageLine": "30885648 - Taschenwörterbuch Englisch-Deutsch",
+      "messageID": "",
+      "messageURL": "",
+      "Barcode": [
+        "30885648"
+      ],
+      "Exemplar": [
+        "Taschenwörterbuch Englisch-Deutsch"
+      ],
+      "Medien": [
+        {
+          "Titel": "Taschenwörterbuch Englisch-Deutsch",
+          "Barcode": "30885648"
+        }
+      ],
+      "Notizen": "Freundliche Erinnerung versandt."
+    },
+    {
+      "message": 6,
+      "SysID": "64788,10839",
+      "BenID": "123456",
+      "msgdate": "2018-05-20T01:00:39Z",
+      "messageTyp": "Erinnerung",
+      "messageLine": "30578340 - Duden \"Sinn- und sachverwandte Wörter\"",
+      "messageID": "",
+      "messageURL": "",
+      "Barcode": [
+        "30578340"
+      ],
+      "Exemplar": [
+        "Duden \"Sinn- und sachverwandte Wörter\""
+      ],
+      "Medien": [
+        {
+          "Titel": "Duden \"Sinn- und sachverwandte Wörter\"",
+          "Barcode": "30578340"
+        }
+      ],
+      "Notizen": "Freundliche Erinnerung versandt."
+    },
+    {
+      "message": 7,
+      "SysID": "64796,61176",
+      "BenID": "123456",
+      "msgdate": "2018-05-28T14:59:36Z",
+      "messageTyp": "Magazinbestellung",
+      "messageLine": "Magazin-ID: 1925125|Exemplar: 31697336 - Frühling auf dem Lande? die Kollektivierung der DDR-Landwirtschaft - Schöne, Jens - 2006 8 050857|System: Ihre Bestellung liegt zur Abholung bereit.|2134",
+      "messageID": "1925125",
+      "messageURL": "http://libero6.slub-dresden.de:57772/csp/user/paia/coremsg.csp?patronid=4998866&msgid=1925125",
+      "Barcode": [
+        "31697336"
+      ],
+      "Exemplar": [
+        "Frühling auf dem Lande? die Kollektivierung der DDR-Landwirtschaft - Schöne, Jens - 2006 8 050857"
+      ],
+      "Medien": [
+        {
+          "Barcode": "31697336",
+          "Titel": "Frühling auf dem Lande? die Kollektivierung der DDR-Landwirtschaft - Schöne, Jens - 2006 8 050857"
+        }
+      ],
+      "Notizen": "Ihre Bestellung liegt zur Abholung bereit."
+    },
+    {
+      "message": 8,
+      "SysID": "64796,68952",
+      "BenID": "123456",
+      "msgdate": "2018-05-28T17:09:12Z",
+      "messageTyp": "Magazinbestellung",
+      "messageLine": "Magazin-ID: 1924839|Exemplar: 30651825 - Unterrichtsideen - Fit und stark fürs Leben - 5/6: Prävention des Rauchens durch Persönlichkeitsförderung ; [mit 75 Kopiervorlagen] -  - 75.4.9699|System: Das Exemplar war nicht am Standort.|2134",
+      "messageID": "1924839",
+      "messageURL": "http://libero6.slub-dresden.de:57772/csp/user/paia/coremsg.csp?patronid=4998866&msgid=1924839",
+      "Barcode": [
+        "30651825"
+      ],
+      "Exemplar": [
+        "Unterrichtsideen - Fit und stark fürs Leben - 5/6: Prävention des Rauchens durch Persönlichkeitsförderung ; [mit 75 Kopiervorlagen] -  - 75.4.9699"
+      ],
+      "Medien": [
+        {
+          "Barcode": "30651825",
+          "Titel": "Unterrichtsideen - Fit und stark fürs Leben - 5/6: Prävention des Rauchens durch Persönlichkeitsförderung ; [mit 75 Kopiervorlagen] -  - 75.4.9699"
+        }
+      ],
+      "Notizen": "Das Exemplar war nicht am Standort."
+    },
+    {
+      "message": 9,
+      "SysID": "64797,33533",
+      "BenID": "123456",
+      "msgdate": "2018-05-29T07:18:53Z",
+      "messageTyp": "Magazinbestellung",
+      "messageLine": "Magazin-ID: 1925319|Exemplar: 34096379 - Spurensuche - Lebensorte, Lebenswege: Lebensgeschichten von Autorinnen der Gruppe „WortArt“ - Günther, Sigrid - 2016 8 011711|Notizen: Ihre Bestellung wird bearbeitet!|2155",
+      "messageID": "1925319",
+      "messageURL": "http://libero6.slub-dresden.de:57772/csp/user/paia/coremsg.csp?patronid=4998866&msgid=1925319",
+      "Barcode": [
+        "34096379"
+      ],
+      "Exemplar": [
+        "Spurensuche - Lebensorte, Lebenswege: Lebensgeschichten von Autorinnen der Gruppe „WortArt“ - Günther, Sigrid - 2016 8 011711"
+      ],
+      "Medien": [
+        {
+          "Barcode": "34096379",
+          "Titel": "Spurensuche - Lebensorte, Lebenswege: Lebensgeschichten von Autorinnen der Gruppe „WortArt“ - Günther, Sigrid - 2016 8 011711"
+        }
+      ],
+      "Notizen": " Ihre Bestellung wird bearbeitet!"
+    },
+    {
+      "message": 10,
+      "SysID": "64797,52051",
+      "BenID": "123456",
+      "msgdate": "2018-05-29T12:27:31Z",
+      "messageTyp": "Magazinbestellung",
+      "messageLine": "Magazin-ID: 1925586|Exemplar: 32537733 - Codice atlantico - buch -  - 2009 8 054138|Notizen: Ihre Bestellung wird bearbeitet!|63",
+      "messageID": "1925586",
+      "messageURL": "http://libero6.slub-dresden.de:57772/csp/user/paia/coremsg.csp?patronid=4998866&msgid=1925586",
+      "Barcode": [
+        "32537733"
+      ],
+      "Exemplar": [
+        "Codice atlantico - buch -  - 2009 8 054138"
+      ],
+      "Medien": [
+        {
+          "Barcode": "32537733",
+          "Titel": "Codice atlantico - buch -  - 2009 8 054138"
+        }
+      ],
+      "Notizen": " Ihre Bestellung wird bearbeitet!"
+    }
+  ]
+}

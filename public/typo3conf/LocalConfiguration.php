@@ -3,7 +3,7 @@ return [
     'BE' => [
         'debug' => false,
         'explicitADmode' => 'explicitAllow',
-        'installToolPassword' => '$argon2i$v=xyz',
+        'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$ZGN4aWtDOHFPQzZwNXpCbA$IkeeVhk1xpKNy+NWg8QL9HXrVVtKUVdA/66KSR7JLVM',
         'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
@@ -22,7 +22,6 @@ return [
         'extConf' => [
             'backend' => 'a:6:{s:9:"loginLogo";s:0:"";s:19:"loginHighlightColor";s:0:"";s:20:"loginBackgroundImage";s:0:"";s:13:"loginFootnote";s:0:"";s:11:"backendLogo";s:0:"";s:14:"backendFavicon";s:0:"";}',
             'extensionmanager' => 'a:2:{s:21:"automaticInstallation";s:1:"1";s:11:"offlineMode";s:1:"0";}',
-            'scheduler' => 'a:2:{s:11:"maxLifetime";s:4:"1440";s:15:"showSampleTasks";s:1:"1";}',
         ],
     ],
     'EXTCONF' => [
@@ -44,10 +43,6 @@ return [
         'extensionmanager' => [
             'automaticInstallation' => '1',
             'offlineMode' => '0',
-        ],
-        'scheduler' => [
-            'maxLifetime' => '1440',
-            'showSampleTasks' => '1',
         ],
     ],
     'FE' => [
