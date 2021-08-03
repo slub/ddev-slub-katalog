@@ -71,7 +71,8 @@
         "slub/slub-katalog-beta": "dev-master",
         "slub/slub-template": "dev-master",
         "slub/slub-account": "dev-master",
-        "slub/slub-events": "dev-master"
+        "slub/slub-events": "dev-master",
+        "apache-solr-for-typo3/solr": "^11"
     },
     "scripts": {
         "typo3-cms-scripts": [
