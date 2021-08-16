@@ -34,7 +34,11 @@ rootPageId: 1
 routes: {  }
 solr_enabled_read: true
 solr_host_read: ddev-slub-katalog.ddev.site
+solr_host_write: localhost
 solr_path_read: /solr/
+solr_path_write: /solr/
 solr_port_read: '8985'
+solr_port_write: '8983'
 solr_scheme_read: http
+solr_scheme_write: http
 solr_use_write_connection: false
