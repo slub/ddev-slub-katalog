@@ -10,5 +10,5 @@ ddev composer install
 ddev import-db -f slub-catalog.sql.gz
 
 # load sample data into Solr
-#./solr-import-data.sh
+./solr-import-data.sh
 
