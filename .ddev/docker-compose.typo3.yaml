@@ -4,3 +4,5 @@ services:
   web:
     environment:
       - TYPO3_CONTEXT=Development
+    external_links:
+      - 'ddev-router:ddev-slub-profile-service.ddev.site'
