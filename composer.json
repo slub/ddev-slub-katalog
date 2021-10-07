@@ -80,7 +80,7 @@
         "slub/slub-katalog-beta": "dev-master",
         "slub/slub-template": "dev-master",
         "slub/slub-account": "dev-master",
-        "slub/slub-events": "dev-master",
+        "slub/slub-events": "dev-develop",
         "apache-solr-for-typo3/solr": "^11"
     },
     "require-dev": {
