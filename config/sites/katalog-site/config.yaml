@@ -24,9 +24,16 @@ languages:
     navigationTitle: English
     hreflang: en-US
     direction: ltr
-    fallbackType: strict
+    fallbackType: fallback
     fallbacks: '0'
     flag: en-us-gb
     languageId: '1'
+    solr_core_read: ''
 rootPageId: 2
 routes: {  }
+solr_enabled_read: true
+solr_host_read: localhost
+solr_path_read: /solr/
+solr_port_read: '8983'
+solr_scheme_read: ''
+solr_use_write_connection: false
