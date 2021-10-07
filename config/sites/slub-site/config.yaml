@@ -25,7 +25,7 @@ languages:
     navigationTitle: ''
     hreflang: en-US
     direction: ltr
-    fallbackType: strict
+    fallbackType: fallback
     fallbacks: '0'
     flag: en-us-gb
     languageId: '1'
