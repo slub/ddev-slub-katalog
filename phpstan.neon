@@ -3,6 +3,6 @@ parameters:
 	bootstrapFiles:
 		- vendor/autoload.php
 	scanDirectories:
-		- public/typo3conf/ext/slub_profile_service
+		- public/typo3conf/ext/slub_web_profile
 	paths:
-		- public/typo3conf/ext/slub_profile_service
+		- public/typo3conf/ext/slub_web_profile
