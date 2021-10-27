@@ -32,9 +32,9 @@
             "type": "git",
             "url": "https://git.slub-dresden.de/slub-webseite/slub-template.git"
         },
-        "slub-profile-service": {
+        "slub-web-profile": {
             "type": "git",
-            "url": "https://github.com/epx-anpf/slub-profile-service.git"
+            "url": "https://github.com/slub/slub-web-profile.git"
         },
         "0": {
             "type": "composer",
@@ -50,7 +50,7 @@
         }
     },
     "require": {
-        "epx-anpf/slub-profile-service": "dev-develop",
+        "slub/slub-web-profile": "dev-develop",
         "helhum/typo3-console": "^5.5.5",
         "typo3/minimal": "^9.5",
         "typo3/cms-about": "^9.5",

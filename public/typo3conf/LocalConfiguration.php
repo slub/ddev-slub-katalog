@@ -23,8 +23,8 @@ return [
             'backend' => 'a:6:{s:14:"backendFavicon";s:0:"";s:11:"backendLogo";s:0:"";s:20:"loginBackgroundImage";s:0:"";s:13:"loginFootnote";s:0:"";s:19:"loginHighlightColor";s:0:"";s:9:"loginLogo";s:0:"";}',
             'extensionmanager' => 'a:2:{s:21:"automaticInstallation";s:1:"1";s:11:"offlineMode";s:1:"0";}',
             'scheduler' => 'a:2:{s:11:"maxLifetime";s:4:"1440";s:15:"showSampleTasks";s:1:"1";}',
-            'slub_profile_service' => 'a:1:{s:9:"apiDomain";s:43:"https://ddev-slub-profile-service.ddev.site";}',
             'solr' => 'a:4:{s:27:"allowSelfSignedCertificates";s:1:"0";s:35:"useConfigurationFromClosestTemplate";s:1:"0";s:29:"useConfigurationMonitorTables";s:0:"";s:43:"useConfigurationTrackRecordsOutsideSiteroot";s:1:"1";}',
+            'slub_web_profile' => 'a:1:{s:9:"apiDomain";s:43:"https://ddev-slub-profile-service.ddev.site";}',
         ],
     ],
     'EXTCONF' => [
@@ -51,7 +51,7 @@ return [
             'maxLifetime' => '1440',
             'showSampleTasks' => '1',
         ],
-        'slub_profile_service' => [
+        'slub_web_profile' => [
             'apiDomain' => 'https://ddev-slub-profile-service.ddev.site',
         ],
         'solr' => [

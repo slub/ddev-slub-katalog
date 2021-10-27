@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c7ff2a2cae0a84cabb86ca35c1cb1bb",
+    "content-hash": "525ff24d171579a8f7fff6049d4909e9",
     "packages": [
         {
             "name": "apache-solr-for-typo3/solr",
@@ -721,49 +721,6 @@
             "time": "2021-08-09T23:46:54+00:00"
         },
         {
-            "name": "epx-anpf/slub-profile-service",
-            "version": "dev-develop",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/epx-anpf/slub-profile-service.git",
-                "reference": "bbf21b4ea0be7a3fba70fc720da064226856a48e"
-            },
-            "require": {
-                "typo3/cms-core": "~9.5.24|~10.4.12"
-            },
-            "type": "typo3-cms-extension",
-            "extra": {
-                "typo3/cms": {
-                    "extension-key": "slub_profile_service"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Slub\\SlubProfileService\\": "Classes/"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Slub\\SlubProfileService\\Tests\\": "Tests"
-                }
-            },
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Andreas Pfeiffer",
-                    "role": "Developer"
-                }
-            ],
-            "description": "TYPO3 extension for profile service.",
-            "keywords": [
-                "TYPO3",
-                "extension"
-            ],
-            "time": "2021-09-23T09:31:30+00:00"
-        },
-        {
             "name": "guzzlehttp/guzzle",
             "version": "6.5.5",
             "source": {
@@ -836,16 +793,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.4.1",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d"
+                "reference": "fe752aedc9fd8fcca3fe7ad05d419d32998a06da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/8e7d04f1f6450fef59366c399cfad4b9383aa30d",
-                "reference": "8e7d04f1f6450fef59366c399cfad4b9383aa30d",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/fe752aedc9fd8fcca3fe7ad05d419d32998a06da",
+                "reference": "fe752aedc9fd8fcca3fe7ad05d419d32998a06da",
                 "shasum": ""
             },
             "require": {
@@ -857,7 +814,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -874,9 +831,24 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                },
+                {
+                    "name": "Tobias Schultze",
+                    "email": "webmaster@tubo-world.de",
+                    "homepage": "https://github.com/Tobion"
                 }
             ],
             "description": "Guzzle promises library",
@@ -885,22 +857,36 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/1.4.1"
+                "source": "https://github.com/guzzle/promises/tree/1.5.1"
             },
-            "time": "2021-03-07T09:25:29+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/promises",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-22T20:56:57+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.8.2",
+            "version": "1.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "dc960a912984efb74d0a90222870c72c87f10c91"
+                "reference": "1afdd860a2566ed3c2b0b4a3de6e23434a79ec85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/dc960a912984efb74d0a90222870c72c87f10c91",
-                "reference": "dc960a912984efb74d0a90222870c72c87f10c91",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/1afdd860a2566ed3c2b0b4a3de6e23434a79ec85",
+                "reference": "1afdd860a2566ed3c2b0b4a3de6e23434a79ec85",
                 "shasum": ""
             },
             "require": {
@@ -938,12 +924,33 @@
             ],
             "authors": [
                 {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                },
+                {
                     "name": "Michael Dowling",
                     "email": "mtdowling@gmail.com",
                     "homepage": "https://github.com/mtdowling"
                 },
                 {
+                    "name": "George Mponos",
+                    "email": "gmponos@gmail.com",
+                    "homepage": "https://github.com/gmponos"
+                },
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com",
+                    "homepage": "https://github.com/Nyholm"
+                },
+                {
+                    "name": "Márk Sági-Kazár",
+                    "email": "mark.sagikazar@gmail.com",
+                    "homepage": "https://github.com/sagikazarmark"
+                },
+                {
                     "name": "Tobias Schultze",
+                    "email": "webmaster@tubo-world.de",
                     "homepage": "https://github.com/Tobion"
                 }
             ],
@@ -960,9 +967,23 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/1.8.2"
+                "source": "https://github.com/guzzle/psr7/tree/1.8.3"
             },
-            "time": "2021-04-26T09:17:50+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/psr7",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-05T13:56:00+00:00"
         },
         {
             "name": "helhum/config-loader",
@@ -1761,16 +1782,15 @@
         },
         {
             "name": "slub/slub-events",
-            "version": "dev-master",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/slub/slub_events.git",
-                "reference": "f808cc16af158ce2557b9cde8a36e56c920a5f03"
+                "reference": "7b148244dd57e9832a305033a22c27f0f0564627"
             },
             "require": {
-                "typo3/cms-core": "~9.5.24|~10.4.12"
+                "typo3/cms-core": "~9.5.31|~10.4.21"
             },
-            "default-branch": true,
             "type": "typo3-cms-extension",
             "extra": {
                 "typo3/cms": {
@@ -1804,7 +1824,7 @@
                 "extension",
                 "slub_events"
             ],
-            "time": "2021-09-21T08:29:36+00:00"
+            "time": "2021-10-07T12:15:31+00:00"
         },
         {
             "name": "slub/slub-find-bookmarks",
@@ -1852,7 +1872,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/slub/slub-find-extend.git",
-                "reference": "f63443bf5884944395d8008776bd3062d42ed39e"
+                "reference": "6af898c6dd2c43cbb1c2694be00077d1aa83ddb6"
             },
             "require": {
                 "typo3/cms-core": "~9.5.26"
@@ -1884,7 +1904,7 @@
             "keywords": [
                 "TYPO3 CMS"
             ],
-            "time": "2021-08-02T19:26:55+00:00"
+            "time": "2021-10-25T16:05:36+00:00"
         },
         {
             "name": "slub/slub-katalog-beta",
@@ -1973,7 +1993,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.slub-dresden.de/slub-webseite/slub-template.git",
-                "reference": "444ecd512b2c02c0c26653509376392417eee653"
+                "reference": "ca9d6fceb258b3a4bf8f2adcab1cfa953a11ec2d"
             },
             "require": {
                 "typo3/cms-core": "~9.5.24"
@@ -2017,7 +2037,44 @@
                 "extension",
                 "slub_template"
             ],
-            "time": "2021-09-13T09:13:06+00:00"
+            "time": "2021-09-29T10:01:51+00:00"
+        },
+        {
+            "name": "slub/slub-web-profile",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slub/slub-web-profile.git",
+                "reference": "91aaa625bc77699f451acc6b184ab7a6d81b5983"
+            },
+            "require": {
+                "typo3/cms-core": "~9.5.24"
+            },
+            "replace": {
+                "typo3-ter/slub-web-profile": "self.version"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "slub_web_profile"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Slub\\SlubWebProfile\\": "Classes/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Andreas Pfeiffer",
+                    "role": "Developer"
+                }
+            ],
+            "description": "SLUB web profile template extension",
+            "time": "2021-10-27T09:03:18+00:00"
         },
         {
             "name": "solarium/solarium",
@@ -2141,16 +2198,16 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v5.3.7",
+            "version": "v5.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "864867b13bd67347497ce956f4b253f8fe18b80c"
+                "reference": "945bcebfef0aeef105de61843dd14105633ae38f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/864867b13bd67347497ce956f4b253f8fe18b80c",
-                "reference": "864867b13bd67347497ce956f4b253f8fe18b80c",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/945bcebfef0aeef105de61843dd14105633ae38f",
+                "reference": "945bcebfef0aeef105de61843dd14105633ae38f",
                 "shasum": ""
             },
             "require": {
@@ -2218,7 +2275,7 @@
                 "psr6"
             ],
             "support": {
-                "source": "https://github.com/symfony/cache/tree/v5.3.7"
+                "source": "https://github.com/symfony/cache/tree/v5.3.8"
             },
             "funding": [
                 {
@@ -2234,7 +2291,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-29T15:08:21+00:00"
+            "time": "2021-09-26T18:29:18+00:00"
         },
         {
             "name": "symfony/cache-contracts",
@@ -3720,16 +3777,16 @@
         },
         {
             "name": "symfony/var-exporter",
-            "version": "v5.3.7",
+            "version": "v5.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-exporter.git",
-                "reference": "2ded877ab0574d8b646f4eb3f716f8ed7ee7f392"
+                "reference": "a7604de14bcf472fe8e33f758e9e5b7bf07d3b91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/2ded877ab0574d8b646f4eb3f716f8ed7ee7f392",
-                "reference": "2ded877ab0574d8b646f4eb3f716f8ed7ee7f392",
+                "url": "https://api.github.com/repos/symfony/var-exporter/zipball/a7604de14bcf472fe8e33f758e9e5b7bf07d3b91",
+                "reference": "a7604de14bcf472fe8e33f758e9e5b7bf07d3b91",
                 "shasum": ""
             },
             "require": {
@@ -3773,7 +3830,7 @@
                 "serialize"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-exporter/tree/v5.3.7"
+                "source": "https://github.com/symfony/var-exporter/tree/v5.3.8"
             },
             "funding": [
                 {
@@ -3789,7 +3846,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-04T22:42:42+00:00"
+            "time": "2021-08-31T12:49:16+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -4250,16 +4307,16 @@
         },
         {
             "name": "typo3/cms-composer-installers",
-            "version": "v3.1.1",
+            "version": "v3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/CmsComposerInstallers.git",
-                "reference": "3092660e3cb629782b364266985b5b9b1f51f165"
+                "reference": "1483e434946cf68b6589cdd61c760b19d0988d62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/CmsComposerInstallers/zipball/3092660e3cb629782b364266985b5b9b1f51f165",
-                "reference": "3092660e3cb629782b364266985b5b9b1f51f165",
+                "url": "https://api.github.com/repos/TYPO3/CmsComposerInstallers/zipball/1483e434946cf68b6589cdd61c760b19d0988d62",
+                "reference": "1483e434946cf68b6589cdd61c760b19d0988d62",
                 "shasum": ""
             },
             "require": {
@@ -4267,7 +4324,7 @@
                 "php": "^7.2 || ^8.0"
             },
             "conflict": {
-                "composer/installers": "<1.0.24 || >1.0.24"
+                "composer/installers": "<2.0.0"
             },
             "replace": {
                 "lw/typo3cms-installers": "*",
@@ -4283,7 +4340,7 @@
             "extra": {
                 "class": "TYPO3\\CMS\\Composer\\Installer\\Plugin",
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-master": "3.1.x-dev"
                 }
             },
             "autoload": {
@@ -4319,9 +4376,9 @@
             "support": {
                 "general": "https://typo3.org/support/",
                 "issues": "https://github.com/TYPO3/CmsComposerInstallers/issues",
-                "source": "https://github.com/TYPO3/CmsComposerInstallers/tree/v3.1.1"
+                "source": "https://github.com/TYPO3/CmsComposerInstallers/tree/v3.1.2"
             },
-            "time": "2021-03-22T12:30:09+00:00"
+            "time": "2021-07-26T22:16:58+00:00"
         },
         {
             "name": "typo3/cms-core",
@@ -5730,16 +5787,16 @@
         },
         {
             "name": "typo3/html-sanitizer",
-            "version": "v2.0.11",
+            "version": "v2.0.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/html-sanitizer.git",
-                "reference": "2d6f51881a4a2f69541102cb5ff021ad8ea8fdd4"
+                "reference": "836ee827f1f9f0569eab3c89459a532d57fe1fbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/html-sanitizer/zipball/2d6f51881a4a2f69541102cb5ff021ad8ea8fdd4",
-                "reference": "2d6f51881a4a2f69541102cb5ff021ad8ea8fdd4",
+                "url": "https://api.github.com/repos/TYPO3/html-sanitizer/zipball/836ee827f1f9f0569eab3c89459a532d57fe1fbb",
+                "reference": "836ee827f1f9f0569eab3c89459a532d57fe1fbb",
                 "shasum": ""
             },
             "require": {
@@ -5775,9 +5832,9 @@
             "description": "HTML sanitizer aiming to provide XSS-safe markup based on explicitly allowed tags, attributes and values.",
             "support": {
                 "issues": "https://github.com/TYPO3/html-sanitizer/issues",
-                "source": "https://github.com/TYPO3/html-sanitizer/tree/v2.0.11"
+                "source": "https://github.com/TYPO3/html-sanitizer/tree/v2.0.13"
             },
-            "time": "2021-09-21T07:16:35+00:00"
+            "time": "2021-10-12T15:04:17+00:00"
         },
         {
             "name": "typo3/minimal",
@@ -5938,16 +5995,16 @@
     "packages-dev": [
         {
             "name": "composer/semver",
-            "version": "3.2.5",
+            "version": "3.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "31f3ea725711245195f62e54ffa402d8ef2fdba9"
+                "reference": "83e511e247de329283478496f7a1e114c9517506"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/31f3ea725711245195f62e54ffa402d8ef2fdba9",
-                "reference": "31f3ea725711245195f62e54ffa402d8ef2fdba9",
+                "url": "https://api.github.com/repos/composer/semver/zipball/83e511e247de329283478496f7a1e114c9517506",
+                "reference": "83e511e247de329283478496f7a1e114c9517506",
                 "shasum": ""
             },
             "require": {
@@ -5999,7 +6056,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/3.2.5"
+                "source": "https://github.com/composer/semver/tree/3.2.6"
             },
             "funding": [
                 {
@@ -6015,7 +6072,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-24T12:41:47+00:00"
+            "time": "2021-10-25T11:34:17+00:00"
         },
         {
             "name": "composer/xdebug-handler",
@@ -6083,16 +6140,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.1.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "cf4cedb9e8991c2daa94a756176d81bf487e4c4b"
+                "reference": "13ae36a76b6e329e44ca3cafaa784ea02db9ff14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/cf4cedb9e8991c2daa94a756176d81bf487e4c4b",
-                "reference": "cf4cedb9e8991c2daa94a756176d81bf487e4c4b",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/13ae36a76b6e329e44ca3cafaa784ea02db9ff14",
+                "reference": "13ae36a76b6e329e44ca3cafaa784ea02db9ff14",
                 "shasum": ""
             },
             "require": {
@@ -6101,7 +6158,7 @@
                 "doctrine/annotations": "^1.12",
                 "ext-json": "*",
                 "ext-tokenizer": "*",
-                "php": "^7.1.3 || ^8.0",
+                "php": "^7.2 || ^8.0",
                 "php-cs-fixer/diff": "^2.0",
                 "symfony/console": "^4.4.20 || ^5.1.3",
                 "symfony/event-dispatcher": "^4.4.20 || ^5.0",
@@ -6109,13 +6166,14 @@
                 "symfony/finder": "^4.4.20 || ^5.0",
                 "symfony/options-resolver": "^4.4.20 || ^5.0",
                 "symfony/polyfill-php72": "^1.23",
+                "symfony/polyfill-php80": "^1.23",
                 "symfony/polyfill-php81": "^1.23",
                 "symfony/process": "^4.4.20 || ^5.0",
                 "symfony/stopwatch": "^4.4.20 || ^5.0"
             },
             "require-dev": {
                 "justinrainbow/json-schema": "^5.2",
-                "keradus/cli-executor": "^1.4",
+                "keradus/cli-executor": "^1.5",
                 "mikey179/vfsstream": "^1.6.8",
                 "php-coveralls/php-coveralls": "^2.4.3",
                 "php-cs-fixer/accessible-object": "^1.1",
@@ -6160,7 +6218,7 @@
             "description": "A tool to automatically fix PHP code style",
             "support": {
                 "issues": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues",
-                "source": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/tree/v3.1.0"
+                "source": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/tree/v3.2.1"
             },
             "funding": [
                 {
@@ -6168,7 +6226,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-08-29T20:16:20+00:00"
+            "time": "2021-10-05T08:12:17+00:00"
         },
         {
             "name": "php-cs-fixer/diff",
@@ -6673,7 +6731,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "epx-anpf/slub-profile-service": 20,
+        "slub/slub-web-profile": 20,
         "slub/find": 20,
         "slub/slub-find-extend": 20,
         "slub/slub-find-bookmarks": 20,
