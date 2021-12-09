@@ -17,12 +17,16 @@
             "url": "https://git.slub-dresden.de/slub-webseite/slub-account.git"
         },
         "slub-find-extend": {
-            "type": "git",
-            "url": "https://github.com/slub/slub-find-extend.git"
+            "type": "vcs",
+            "url": "git@github.com:slub/slub-find-extend.git"
+        },
+        "slub-find-flexibleviews": {
+            "type": "vcs",
+            "url": "git@github.com:slub/slub_find_flexibleviews.git"
         },
         "slub-find": {
-            "type": "git",
-            "url": "https://github.com/slub/typo3-find.git"
+            "type": "vcs",
+            "url": "git@github.com:slub/typo3-find.git"
         },
         "slub-template": {
             "type": "git",
@@ -72,7 +76,8 @@
         "slub/slub-template": "dev-master",
         "slub/slub-account": "dev-master",
         "slub/slub-events": "dev-master",
-        "apache-solr-for-typo3/solr": "^11"
+        "apache-solr-for-typo3/solr": "^11",
+        "slub/slub-find-flexibleviews": "dev-main"
     },
     "scripts": {
         "typo3-cms-scripts": [
