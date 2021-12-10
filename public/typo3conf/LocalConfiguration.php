@@ -1,7 +1,7 @@
 <?php
 return [
     'BE' => [
-        'debug' => false,
+        'debug' => true,
         'explicitADmode' => 'explicitAllow',
         'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$ZGN4aWtDOHFPQzZwNXpCbA$IkeeVhk1xpKNy+NWg8QL9HXrVVtKUVdA/66KSR7JLVM',
         'loginSecurityLevel' => 'normal',
@@ -59,7 +59,7 @@ return [
     ],
     'FE' => [
         'cookieDomain' => 'ddev.site',
-        'debug' => false,
+        'debug' => true,
         'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
@@ -82,7 +82,7 @@ return [
                     'writerConfiguration' => [
                         5 => [
                             'TYPO3\CMS\Core\Log\Writer\FileWriter' => [
-                                'disabled' => true,
+                                'disabled' => false,
                             ],
                         ],
                     ],
@@ -99,15 +99,15 @@ return [
         'transport_smtp_username' => '',
     ],
     'SYS' => [
-        'devIPmask' => '',
-        'displayErrors' => 0,
+        'devIPmask' => '*',
+        'displayErrors' => 1,
         'encryptionKey' => '710830ffde66a45f68282df96f60b810561b381f4ea96fc9be52caf7c562bbbee46d2879e7a2d1807776193bfa9b99b5',
-        'exceptionalErrors' => 4096,
+        'exceptionalErrors' => 12290,
         'features' => [
             'newTranslationServer' => true,
             'unifiedPageTranslationHandling' => true,
         ],
         'sitename' => 'New TYPO3 site',
-        'systemLogLevel' => 2,
+        'systemLogLevel' => 0,
     ],
 ];

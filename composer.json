@@ -18,15 +18,19 @@
         },
         "slub-find-extend": {
             "type": "git",
-            "url": "https://github.com/slub/slub-find-extend.git"
+            "url": "git@github.com:slub/slub-find-extend.git"
         },
         "slub-find": {
             "type": "git",
-            "url": "https://github.com/slub/typo3-find.git"
+            "url": "git@github.com:slub/typo3-find.git"
+        },
+        "slub-find-flexibleviews": {
+            "type": "git",
+            "url": "git@github.com:slub/slub_find_flexibleviews.git"
         },
         "slub-template": {
             "type": "git",
-            "url": "https://git.slub-dresden.de/slub-webseite/slub-template.git"
+            "url": "git@git.slub-dresden.de:slub-webseite/slub-template.git"
         },
         "0": {
             "type": "composer",
@@ -66,6 +70,7 @@
         "solarium/solarium": "^4.2",
         "slub/find": "dev-slub-master",
         "slub/slub-find-extend": "dev-master",
+        "slub/slub-find-flexibleviews": "dev-main",
         "slub/slub-find-bookmarks": "dev-master",
         "slub/slub-katalog-config": "dev-master",
         "slub/slub-katalog-beta": "dev-master",
