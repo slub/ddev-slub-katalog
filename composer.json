@@ -81,7 +81,8 @@
         "slub/slub-template": "dev-master",
         "slub/slub-account": "dev-master",
         "slub/slub-events": "dev-develop",
-        "apache-solr-for-typo3/solr": "^11"
+        "apache-solr-for-typo3/solr": "^11",
+        "ext-json": "*"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.1",
