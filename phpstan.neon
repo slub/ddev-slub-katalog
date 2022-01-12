@@ -1,0 +1,8 @@
+parameters:
+	level: 3
+	bootstrapFiles:
+		- vendor/autoload.php
+	scanDirectories:
+		- public/typo3conf/ext/slub_web_profile
+	paths:
+		- public/typo3conf/ext/slub_web_profile

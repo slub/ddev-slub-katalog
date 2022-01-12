@@ -16,6 +16,10 @@
             "type": "git",
             "url": "https://git.slub-dresden.de/slub-webseite/slub-account.git"
         },
+        "slub-events": {
+            "type": "git",
+            "url": "https://github.com/slub/slub_events.git"
+        },
         "slub-find-extend": {
             "type": "git",
             "url": "https://github.com/slub/slub-find-extend.git"
@@ -27,6 +31,10 @@
         "slub-template": {
             "type": "git",
             "url": "https://git.slub-dresden.de/slub-webseite/slub-template.git"
+        },
+        "slub-web-profile": {
+            "type": "git",
+            "url": "https://github.com/slub/slub-web-profile.git"
         },
         "0": {
             "type": "composer",
@@ -42,6 +50,7 @@
         }
     },
     "require": {
+        "slub/slub-web-profile": "dev-develop",
         "helhum/typo3-console": "^5.5.5",
         "typo3/minimal": "^9.5",
         "typo3/cms-about": "^9.5",
@@ -71,16 +80,33 @@
         "slub/slub-katalog-beta": "dev-master",
         "slub/slub-template": "dev-master",
         "slub/slub-account": "dev-master",
-        "slub/slub-events": "dev-master",
-        "apache-solr-for-typo3/solr": "^11"
+        "slub/slub-events": "dev-develop",
+        "apache-solr-for-typo3/solr": "^11",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.1",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan": "^0.12.96",
+        "saschaegerer/phpstan-typo3": "^0.13.3"
     },
     "scripts": {
         "typo3-cms-scripts": [
-            "typo3cms install:fixfolderstructure",
-            "typo3cms install:generatepackagestates"
+            "typo3cms install:fixfolderstructure"
         ],
         "post-autoload-dump": [
             "@typo3-cms-scripts"
-        ]
+        ],
+        "ci:php": [
+            "@ci:php:cs-fixer",
+            "@ci:php:stan"
+        ],
+        "ci:php:cs-fixer": "php-cs-fixer fix --config .php_cs.php -v --dry-run --using-cache no --diff",
+        "ci:php:stan": "phpstan analyse"
+    },
+    "scripts-descriptions": {
+        "ci:php": "Runs all static checks for the PHP files.",
+        "ci:php:cs-fixer": "Checks the code style with the PHP Coding Standards Fixer (PHP-CS-Fixer).",
+        "ci:php:stan": "Checks the PHP types using PHPStan."
     }
 }
