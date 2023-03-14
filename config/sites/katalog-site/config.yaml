@@ -30,6 +30,57 @@ languages:
     languageId: '1'
     solr_core_read: ''
 rootPageId: 2
+routeEnhancers:
+  CatalogId:
+    type: Extbase
+    limitToPages:
+      - 2
+    extension: Find
+    plugin: Find
+    routes:
+      - routePath: '/id/{findId}/debug/{debug}'
+        _controller: 'Search::detail'
+        _arguments:
+          findId: id
+          findDebug: debug
+      - routePath: '/id/{findId}'
+        _controller: 'Search::detail'
+        _arguments:
+          findId: id
+      - routePath: '/ppn/{findPpn}'
+        _controller: 'Search::detail'
+        _arguments:
+          findPpn: 'ppn'
+      - routePath: '/rsn/{findRsn}'
+        _controller: 'Search::detail'
+        _arguments:
+          findRsn: 'rsn'
+      - routePath: '/oclc/{findOclc}'
+        _controller: 'Search::detail'
+        _arguments:
+          findOclc: 'oclc'
+      - routePath: '/bc/{findBarcode}'
+        _controller: 'Search::detail'
+        _arguments:
+          findBarcode: 'bc'
+    defaults:
+      findDebug: '1'
+    aspects:
+      findId:
+        type: SlubCatalogId
+      findDebug:
+        type: StaticRangeMapper
+        start: '0'
+        end: '1'
+      findPpn:
+        type: SlubCatalogId
+      findRsn:
+        type: SlubCatalogId
+      findOclc:
+        type: SlubCatalogId
+      findBarcode:
+        type: SlubCatalogId
+    defaultController: 'Search::index'
 routes: {  }
 solr_enabled_read: true
 solr_host_read: localhost
